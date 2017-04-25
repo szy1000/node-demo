@@ -5,6 +5,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <% include a %>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <ul>
@@ -12,5 +13,6 @@
     	<li><%= supplies[i] %></li>
     	<% } %>
     </ul>
+    <%- include b %>
   </body>
 </html>

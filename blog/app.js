@@ -18,10 +18,10 @@ app.set('view engine', 'ejs');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 
-// app.use(express.bodyParse());
+app.use(express.bodyParser());
 
-app.use(express.json());
-app.use(express.urlencoded());
+// app.use(express.json());
+// app.use(express.urlencoded());
 
 app.use(express.methodOverride());
 app.use(app.router);
@@ -32,9 +32,16 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+// app.get('/', routes.index);
+// 35行和37是相同的作用
+// app.get('/', function(req, res){
+// 	res.render('index', {title: 'Express'})
+// });
+
+// app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+routes(app);
