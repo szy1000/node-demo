@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <% include a %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <ul>
-    	<% for(var i=0; i< supplies.length; i++) {%>
-    	<li><%= supplies[i] %></li>
-    	<% } %>
-    </ul>
-    <%- include b %>
-  </body>
-</html>
+<% include header %>
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+<ul>
+	<% for(var i=0; i< supplies.length; i++) {%>
+	<li><%= supplies[i] %></li>
+	<% } %>
+</ul>
+<%- include footer %>
